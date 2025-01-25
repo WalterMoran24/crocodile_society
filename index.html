@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="./equipos\assets\images\css\main.css">
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="container">
+    <div>
+        <h1>Bienvenido mi estimad@</h1>
+        <input style="height: 30px;width: 300px;" type="password" id="password" placeholder="Введите пароль">
+        <br>
+        <br>
+        <button style="text-align: center;" onclick="checkPassword()">Ingresar</button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'cocodrilo') {
+                localStorage.setItem('authenticated', true); // Guarda que está autenticado
+                window.location.href = 'home.html';
+            } else {
+                alert('Contraseña incorrecta, intente de nuevo.');
+            }
+        }
+    </script>
+</body>
+</html>
